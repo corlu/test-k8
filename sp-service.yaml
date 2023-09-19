@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: shinyproxy
-  namespace: shiny
+  namespace: alperin-corsuz-dev
 spec:
   type: LoadBalancer
   selector:
