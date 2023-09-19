@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: shinydeployment
   labels:
-    app: eulerShiny
+    app: eulershiny
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eulerShiny
+      app: eulershiny
   template:
     metadata:
       labels:
-        app: eulerShiny
+        app: eulershiny
     spec:
       containers:
-      - name: eulerShiny
+      - name: eulershiny
         image: corlua/test-shiny-euler:v2 
         ports:
         - containerPort: 3000
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: eulerShiny
+    app: eulershiny
   ports:
     - protocol: TCP
       port: 3000
