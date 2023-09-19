@@ -2,21 +2,21 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   namespace: alperin-corsuz-dev
-  name: service-all
+  name: masterrole
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["services"]
+  resources: ["services","pods", "pods/log"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: shinyproxy-auth
+  name: shinyproxy-rolebinding
 subjects:
   - kind: ServiceAccount
     name: alperin-corsuz-dev
     namespace: alperin-corsuz-dev
 roleRef:
   kind: Role
-  name: service-all
+  name: masterrole
   apiGroup: rbac.authorization.k8s.io
