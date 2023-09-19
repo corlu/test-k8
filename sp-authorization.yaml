@@ -4,8 +4,8 @@ metadata:
   name: shinyproxy-auth
 subjects:
   - kind: ServiceAccount
-    name: default
-    namespace: shiny
+    name: alperin-corsuz-dev
+    namespace: alperin-corsuz-dev
 roleRef:
   kind: ClusterRole
   name: cluster-admin
