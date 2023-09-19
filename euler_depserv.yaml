@@ -18,18 +18,17 @@ spec:
       - name: eulershiny
         image: corlua/test-shiny-euler:v2 
         ports:
-        - containerPort: 3000
+        - containerPort: 3838
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: euler-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: eulershiny
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
-      nodePort: 30100
+      port: 3838
+      targetPort: 3838
