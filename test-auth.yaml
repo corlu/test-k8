@@ -5,7 +5,7 @@ metadata:
   name: masterrole
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["services","pods", "pods/log"]
+  resources: ["services","pods"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -14,7 +14,7 @@ metadata:
   name: shinyproxy-rolebinding
 subjects:
   - kind: ServiceAccount
-    name: alperin-corsuz-dev
+    name: default 
     namespace: alperin-corsuz-dev
 roleRef:
   kind: Role
